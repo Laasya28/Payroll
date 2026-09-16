@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #059669;
+  /* Emerald 600 */
+  --color-secondary: #064e3b;
+  /* Forest Green */
+  --color-accent: #f0fdf4;
+  /* Very Light Green/Mint */
+  --color-background: #ffffff;
+  /* Pure White */
+  --color-surface: #ffffff;
+  --color-text: #064e3b;
+  /* Forest Green - Organic feel */
+  --shadow-classic: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-premium: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    @apply antialiased font-sans;
+  }
+}
+
+.card-classic {
+  @apply bg-white border border-emerald-50 shadow-premium rounded-2xl overflow-hidden transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-emerald-600 text-white px-8 py-4 rounded-xl transition-all duration-200 font-bold hover:bg-emerald-700 active:scale-[0.98] shadow-sm flex items-center justify-center gap-2;
+}
+
+.input-group {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 52px !important;
+  background-color: #f0fdf4 !important;
+  /* mint-50 */
+  border: 1px solid #d1fae5 !important;
+  /* emerald-100 */
+  border-radius: 12px !important;
+  padding: 0 16px !important;
+  gap: 12px !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+.input-group:focus-within {
+  background-color: #ffffff !important;
+  border-color: #059669 !important;
+  /* emerald-600 */
+  box-shadow: 0 0 0 1px #059669 !important;
+}
+
+.input-icon {
+  color: #10b981 !important;
+  /* emerald-500 */
+  flex-shrink: 0 !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.input-field {
+  flex: 1 1 auto !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  color: #064e3b !important;
+  /* forest green */
+  padding: 0 !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  box-shadow: none !important;
+  display: block;
+}
+
+.otp-input {
+  @apply w-full bg-emerald-50 border-2 border-emerald-100 rounded-2xl p-6 text-center text-3xl tracking-[0.5em] font-black transition-all duration-200;
+  height: auto !important;
+}
+
+.otp-input:focus {
+  @apply bg-white border-emerald-600 ring-0;
+}
+
+.input-field::placeholder {
+  color: #a7f3d0 !important;
+  /* emerald-200 */
+  font-weight: 400 !important;
+}
+
+.input-group:focus-within .input-icon {
+  @apply text-emerald-700;
+}
+
+.badge-status {
+  @apply px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border border-emerald-100 bg-emerald-50 text-emerald-700;
+}
+
+.label-premium {
+  @apply block text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-2 ml-1;
+}
+
+.phone-prefix {
+  display: flex;
+  align-items: center;
+  color: #10b981;
+  /* emerald-500 */
+  font-weight: 700;
+  border-right: 1px solid #d1fae5;
+  padding-right: 0.75rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Premium Utilities */
+.hero-glass-light {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.soft-gradient {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+}
